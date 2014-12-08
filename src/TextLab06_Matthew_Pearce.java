@@ -3,14 +3,15 @@ import java.util.Scanner;
 
 public class TextLab06_Matthew_Pearce {
 
-	static double num, den; // numerator and denominator of the rational number
+	static double num1, den1, num2, den2; // numerator and denominator of the rational number
 
 	public static void main(String args[]) {
 		String response;
+		
 		do {
 		enterData();
 
-		Rational r = new Rational(num, den);
+		Rational r = new Rational(num1, den1, num2, den2);
 		r.displayData();
 		
 		Animation.delay(900);
@@ -24,62 +25,79 @@ public class TextLab06_Matthew_Pearce {
 
 	public static void enterData() {
 		Scanner input = new Scanner(System.in);
-		Animation.animateText("\nEnter the numerator ----> ");
-		num = input.nextInt();
-		Animation.animateText("\nEnter the denominator --> ");
-		den = input.nextInt();
+		Animation.animateText("\nEnter the 1st numerator ----> ");
+		num1 = input.nextInt();
+		Animation.animateText("\nEnter the 1st denominator --> ");
+		den1 = input.nextInt();
+		
+		Animation.animateText("\nEnter the 2nd numerator ----> ");
+		num2 = input.nextInt();
+		Animation.animateText("\nEnter the 2nd denominator --> ");
+		den2 = input.nextInt();
 	}
 }
 
 class Rational {
-	private int firstNum;
-	private int firstDen;
-	private int reducedDen;
-	private int reducedNum;
-	private int gcf;
+	
+	private double firstNum;
+	private double firstDen;
+	
+	private double secondNum;
+	private double secondDen;
+	
+	private double gcf;
 	
 
 	public void displayData()
 	{
 		
-		Animation.animateText("\n" + getOriginal() + " equals " + getDecimal());
-		Animation.animateText("\n\nThe reduced form is " + getReduced());
 	}
 
-	public Rational(double num, double den)
+	public Rational(double firstNum, double firstDen, double secondNum, double den2 )
 	{
-		this.firstNum = (int) num;
-		this.firstDen = (int) den;
-		reducedNum = (int) num;
-		reducedDen = (int) den;
+		this.firstNum = firstNum;
+		this.firstDen = firstDen;
+		
+		this.secondNum = 
+		
+		
 	}
 
-	public int getnum() 
+	public int getnum1() 
 	{
 		return firstNum;
 	}
 
-	public int getden() 
+	public int getden1() 
 	{
 		return firstDen;
 	}
-
-	public double getDecimal() {
-		double decimal = (double) getnum() / (double) getden();
-		return decimal;
+	
+	public int getnum2() 
+	{
+		return secondNum;
 	}
 
-	public String getOriginal() {
-		String original = firstNum + "/" + firstDen;
-		return original;
+	public int getden2() 
+	{
+		return secondDen;
+	}
+
+	/*public double getDecimal() {
+		double decimal = (double) getnum() / (double) getden();
+		return decimal;
+	}*/
+
+	public String getOriginal1() {
+	
+	}
+	
+	public String getOriginal2() {
+		
 	}
 
 	public String getReduced() {
-		int gcf = getGCF(firstNum, firstDen);
-		reducedNum = (firstNum / gcf);
-		reducedDen = (firstDen / gcf);
-		String reduced = reducedNum + "/" + reducedDen;
-		return reduced;
+		
 	}
 
 	private int getGCF(int n1, int n2) {
