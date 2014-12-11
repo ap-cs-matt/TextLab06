@@ -9,9 +9,8 @@ public class TextLab06_Matthew_Pearce {
 
 	   public static void main (String args[])
 	   {
-	      do{
-		   
-		   enterData();
+	      do{   
+		  enterData();
 
 	      Rational r1 = new Rational(num1,den1);
 	      Rational r2 = new Rational(num2,den2);
@@ -27,7 +26,6 @@ public class TextLab06_Matthew_Pearce {
 	      
 	   }
 
-
 	   public static void enterData()
 	   {
 	      Scanner input = new Scanner(System.in);
@@ -41,8 +39,7 @@ public class TextLab06_Matthew_Pearce {
 
 	      den2 = input.nextInt();
 	   }
-	   
-	   
+	   	   
 	   public static void displayData(Rational r1, Rational r2, Rational r3){
 		r3.multiply(r1,r2);
 		Animation.animateText("\n\n" + r1.getOriginal() + " * " + r2.getOriginal() + "  =  " + r3.getReduced());
@@ -58,7 +55,6 @@ public class TextLab06_Matthew_Pearce {
 		   }
 	   }
 	
-
 
 	class Rational
 	{
@@ -143,8 +139,7 @@ public class TextLab06_Matthew_Pearce {
 	{
 		public static void animateText(String s)
 		{
-			int x = 0;
-			
+			int x = 0;			
 			while (x <= s.length()-1)
 			{ 
 				System.out.print(s.charAt(x));			
